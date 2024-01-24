@@ -70,3 +70,10 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+Assets/FMODStudioCache.asset
+Assets/FMODStudioCache.asset.meta
+Fmod.log
+Fmod_editor.log
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
