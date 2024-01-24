@@ -1,7 +1,5 @@
 using UnityEngine;
-using TMPro;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
 [System.Serializable]
 public class DialogueCharacter
@@ -27,24 +25,33 @@ public class Dialogue
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    private DialogueManager manager;
 
-    void Start()
+    private void Awake()
     {
-        
+        manager = FindObjectOfType<DialogueManager>();
+
+        if (manager == null)
+        {
+            Debug.LogError("DialogueManager not found!");
+        }
+        else
+        {
+            TriggerDialogue();
+        }
     }
 
-    void Update()
+    [ContextMenu("jojojo")]
+    public void TriggerDialogue()
     {
-        
+        if (manager != null)
+        {
+            manager.Instance.StartDialogue(dialogue);
+        }
+        else
+        {
+            Debug.LogError("DialogueManager is null. Cannot start dialogue.");
+        }
     }
 }
 
-public class DialogueManager : MonoBehaviour
-{
-    private DialogueManager instance;
-
-    [SerializeField] private Image characterImage;
-    [SerializeField] private TextMeshProUGUI characterName;
-    [SerializeField] private TextMeshProUGUI dialogueArea;
-
-}
