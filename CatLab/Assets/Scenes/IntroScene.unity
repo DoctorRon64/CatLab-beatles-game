@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -167.03, y: 120}
-  m_SizeDelta: {x: 1304.8, y: 88.02}
+  m_AnchoredPosition: {x: -167.03001, y: 124.9}
+  m_SizeDelta: {x: 1304.8, y: 97.82}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &385815792
 MonoBehaviour:
@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Person Name 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c8cb2c6daafb32745b7c8a89b621ebde, type: 2}
-  m_sharedMaterial: {fileID: -4534802749635722961, guid: c8cb2c6daafb32745b7c8a89b621ebde, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5c71f2cb818caf34e900cbfc719ca33a, type: 2}
+  m_sharedMaterial: {fileID: 5732922511692403020, guid: 5c71f2cb818caf34e900cbfc719ca33a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -207,13 +207,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 88
+  m_fontSize: 106.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 90
-  m_fontStyle: 0
+  m_fontSizeMax: 159.9
+  m_fontStyle: 4
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 1756854673}
 --- !u!81 &519420034
 AudioListener:
   m_ObjectHideFlags: 0
@@ -397,8 +397,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -167.03, y: -51.24001}
-  m_SizeDelta: {x: 1304.8, y: 224.49}
+  m_AnchoredPosition: {x: -167.03, y: -47.5}
+  m_SizeDelta: {x: 1304.8, y: 217.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746917395
 MonoBehaviour:
@@ -420,9 +420,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-    Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-    Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla '
+  m_text: De vorkjes vallen in de categorie wegwerpbestek; ze worden doorgaans gemaakt
+    van kunststof of hout. Er zijn verschillende varianten, zoals de tweetand (al
+    dan niet met weerhaakjes) en de drietand; in die laatste categorie vallen de
+    plastic modellen. Het standaard plastic model wordt ook wel het Neptunusmodel
+    genoemd.[1] De plastic modellen zijn er in meerdere
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7bc95badc4186f440b2e8655fc1f6544, type: 2}
   m_sharedMaterial: {fileID: -8846557746867935972, guid: 7bc95badc4186f440b2e8655fc1f6544, type: 2}
@@ -449,7 +451,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 36.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -530,7 +532,7 @@ RectTransform:
   m_GameObject: {fileID: 912929672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8851, y: 0.8851, z: 0.8851}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 385815791}
@@ -619,7 +621,7 @@ MonoBehaviour:
   characterImage: {fileID: 2055734639}
   characterName: {fileID: 385815792}
   dialogueArea: {fileID: 746917395}
-  typingSpeed: 0
+  typingSpeed: 0.01
   isDialogueActive: 0
   anim: {fileID: 912929676}
 --- !u!114 &912929678
@@ -637,16 +639,24 @@ MonoBehaviour:
   dialogue:
     lines:
     - character:
-        characterName: De President van Amerika
-        icon: {fileID: 21300000, guid: 1e89f1bdad9fcfe46b016f6f2d5298ab, type: 3}
+        characterName: John Lennon
+        icon: {fileID: 21300000, guid: d79153a20b952244abb19d8a8f4014e3, type: 3}
       dialogueText: This is the president of the united states
     - character:
-        characterName: Hans
-        icon: {fileID: 21300000, guid: dad347202d4ad0e45b3250c6994ff9cf, type: 3}
+        characterName: Paul Macgarnty
+        icon: {fileID: 21300000, guid: 82721f6768db93e4396576f3e99249f7, type: 3}
       dialogueText: Wow dat is super cool alles kan in twee weken als je een goed
         concept hebt waar je jullie zijn goed opweg jullie hebben alle ingredieent
         ik snap dat jullie veel zouden willen maar in mijn vak in theater van hey
         dit is het concept maar dat leidt naar een verhaal.
+    - character:
+        characterName: Ringo star
+        icon: {fileID: 21300000, guid: 30892505a4a974b46969655d6a100266, type: 3}
+      dialogueText: I Like to drum and bass and stuff
+    - character:
+        characterName: George
+        icon: {fileID: 21300000, guid: 3057c33f57be7d24ebe7a96338cc5f43, type: 3}
+      dialogueText: WHATTHE HEEEEEEEEEULLLLLLL
 --- !u!114 &912929679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,7 +813,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1756854676}
   - component: {fileID: 1756854675}
-  - component: {fileID: 1756854674}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -811,37 +820,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1756854674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756854673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 103389233
-      Data2: 1103392486
-      Data3: -289078388
-      Data4: 1018517953
-    Path: event:/RingwallReportInst
-  Event: 
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &1756854675
 MonoBehaviour:
   m_ObjectHideFlags: 0

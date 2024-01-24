@@ -75,13 +75,13 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in _dialogue.dialogueText.ToCharArray())
         {
             dialogueArea.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+			yield return new WaitForSeconds(typingSpeed);
         }
     }
 
     private void EndDialogue()
     {
-        isDialogueActive = false;
+		isDialogueActive = false;
         anim.Play("Hide");
 
         if (lines.Count == 0)
@@ -89,6 +89,7 @@ public class DialogueManager : MonoBehaviour
             Invoke("SkipScene", 1.0f);
         }
     }
+
     void SkipScene()
     {
         SkipToNextScene skipToNextScene = GetComponent<SkipToNextScene>();
