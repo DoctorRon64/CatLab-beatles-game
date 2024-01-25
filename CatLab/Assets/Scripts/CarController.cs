@@ -1,11 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarController : MonoBehaviour, IDamagable
 {
     private Rigidbody2D rb2d;
+	private bool isDrifting;
+	[SerializeField] private ParticleSystem particleDust;
+	[SerializeField] private TrailRenderer[] TyreMarks;
 	[SerializeField] private float CarSpeed = 1.0f;
 	
 	public Action<int> onHealthChanged;
@@ -33,7 +34,9 @@ public class CarController : MonoBehaviour, IDamagable
 	private void Update()
 	{
 		HandleInput();
+		CheckDrift();
 	}
+
 	protected virtual void OnHealthChanged(int newHealth)
 	{
 		onHealthChanged?.Invoke(newHealth);
@@ -48,6 +51,23 @@ public class CarController : MonoBehaviour, IDamagable
 		Vertical *= CarSpeed;
 
 		rb2d.velocity = new Vector3(Horizontal, Vertical, 0);
+
+		if (Horizontal > 0.01f)	{ particleDust.Play(); }
+		if (Horizontal < 0.01f) { isDrifting = true; } else { isDrifting = false; }
+	}
+
+	private void CheckDrift()
+	{
+		if (isDrifting) { EmitterSettings(true); }
+		else { EmitterSettings(false); }
+	}
+
+	private void EmitterSettings(bool _setEmitterTo)
+	{
+		foreach(TrailRenderer T in TyreMarks)
+		{
+			T.emitting = _setEmitterTo;
+		}
 	}
 
 	public void TakeDamage(int _damage)
