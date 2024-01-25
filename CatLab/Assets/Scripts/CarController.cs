@@ -52,8 +52,11 @@ public class CarController : MonoBehaviour, IDamagable
 
 		rb2d.velocity = new Vector3(Horizontal, Vertical, 0);
 
-		if (Horizontal > 0.01f)	{ particleDust.Play(); }
-		if (Horizontal < 0.01f) { isDrifting = true; } else { isDrifting = false; }
+		if (Horizontal > 0f) { particleDust.Play(); }
+		if (Horizontal < 0f) { isDrifting = true; } else { isDrifting = false; }
+
+		Debug.Log("HORIZONTAL" + Horizontal);
+		Debug.Log("VERTICAL" + Vertical);
 	}
 
 	private void CheckDrift()
