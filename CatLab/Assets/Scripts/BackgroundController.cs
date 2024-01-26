@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class BackgroundController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class BackgroundController : MonoBehaviour
 	[SerializeField] private float bpm = 120f;
 	[SerializeField] private GameObject backgroundVersion1;
 	[SerializeField] private GameObject backgroundVersion2;
+	[SerializeField] private HighscoreManager highscoreManager;
 
 	private float timeBetweenSwitches;
 
@@ -39,11 +41,18 @@ public class BackgroundController : MonoBehaviour
 		{
 			backgroundVersion1.SetActive(false);
 			backgroundVersion2.SetActive(true);
+			AddScore();
 		}
 		else
 		{
 			backgroundVersion1.SetActive(true);
 			backgroundVersion2.SetActive(false);
+			AddScore();
 		}
+	}
+
+	private void AddScore()
+	{
+		highscoreManager.AddScore();
 	}
 }

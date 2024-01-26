@@ -6,6 +6,7 @@ public class CarController : VehicleController
     private Rigidbody2D rb2d;
 	private bool isDrifting;
 	[SerializeField] private ParticleSystem particleDust;
+	[SerializeField] private HighscoreManager scoreManage;
 	[SerializeField] private TrailRenderer[] TyreMarks;
 	[SerializeField] private float CarSpeed = 1.0f;
 
@@ -39,6 +40,13 @@ public class CarController : VehicleController
 		rb2d.velocity = new Vector3(horizontalInput, verticalInput, 0);
 
 		if (horizontalInput < 0f) { isDrifting = true; } else { isDrifting = false; }
+	}
+
+	public override void TakeDamage(int _damage)
+	{
+		base.TakeDamage(_damage);
+
+		scoreManage.RemoveScore(3);
 	}
 
 	private void CheckDrift()

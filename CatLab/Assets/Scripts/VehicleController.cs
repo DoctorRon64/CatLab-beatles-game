@@ -40,7 +40,7 @@ public class VehicleController : MonoBehaviour, IDamagable
 		verticalInput = Input.GetAxis("Vertical");
 	}
 
-	public void TakeDamage(int _damage)
+	public virtual void TakeDamage(int _damage)
 	{
 		Health -= _damage;
 

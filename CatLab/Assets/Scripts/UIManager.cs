@@ -1,10 +1,13 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
 	[SerializeField] private CarController carController;
+	[SerializeField] private HighscoreManager highscoreManager;
 	[SerializeField] private Slider healthSlider;
+	[SerializeField] private TextMeshProUGUI highScoreText;
 
 	private void Update()
 	{
@@ -15,14 +18,17 @@ public class UIManager : MonoBehaviour
 	{
 		healthSlider.maxValue = carController.MaxHealth;
 		healthSlider.value = carController.MaxHealth;
+		highscoreManager.HighScoreAction += UpdateScoreText;
 		carController.onHealthChanged += UpdateCarHealth;
+	}
+
+	private void UpdateScoreText(int _newScore)
+	{
+		highScoreText.text = "High Score: " + _newScore + " Km";
 	}
 
 	private void UpdateCarHealth(int _newHealth)
 	{
 		healthSlider.value = _newHealth;
 	}
-
-
-
 }
