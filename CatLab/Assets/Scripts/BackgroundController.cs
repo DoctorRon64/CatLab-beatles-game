@@ -29,7 +29,7 @@ public class BackgroundController : MonoBehaviour
 
 		if (background.transform.position.x < -background.transform.localScale.x)
 		{
-			background.transform.Translate(new Vector2(background.transform.localScale.x * 2f, 0));
+			//background.transform.Translate(new Vector2(background.transform.localScale.x * 2f, 0));
 		}
 	}
 
