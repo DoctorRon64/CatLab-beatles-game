@@ -1,29 +1,13 @@
 using System;
 using UnityEngine;
 
-public class CarController : MonoBehaviour, IDamagable
+public class CarController : VehicleController
 {
     private Rigidbody2D rb2d;
 	private bool isDrifting;
 	[SerializeField] private ParticleSystem particleDust;
 	[SerializeField] private TrailRenderer[] TyreMarks;
 	[SerializeField] private float CarSpeed = 1.0f;
-	
-	public Action<int> onHealthChanged;
-	public int MaxHealth = 20;
-	private int health;
-	public int Health
-	{
-		get { return health; }
-		set
-		{
-			if (health != value)
-			{
-				health = value;
-				OnHealthChanged(health);
-			}
-		}
-	}
 
 	private void Awake()
 	{
@@ -37,23 +21,24 @@ public class CarController : MonoBehaviour, IDamagable
 		CheckDrift();
 	}
 
-	protected virtual void OnHealthChanged(int newHealth)
+	private void LateUpdate()
 	{
-		onHealthChanged?.Invoke(newHealth);
+		if (horizontalInput > 0f)
+		{
+			particleDust.Play(true);
+		}
 	}
 
-	private void HandleInput()
+	protected override void HandleInput()
 	{
-		float Horizontal = Input.GetAxis("Horizontal");
-		float Vertical = Input.GetAxis("Vertical");
+		base.HandleInput();
 
-		Horizontal *= CarSpeed;
-		Vertical *= CarSpeed;
+		horizontalInput *= CarSpeed;
+		verticalInput *= CarSpeed;
 
-		rb2d.velocity = new Vector3(Horizontal, Vertical, 0);
+		rb2d.velocity = new Vector3(horizontalInput, verticalInput, 0);
 
-		if (Horizontal > 0.01f)	{ particleDust.Play(); }
-		if (Horizontal < 0.01f) { isDrifting = true; } else { isDrifting = false; }
+		if (horizontalInput < 0f) { isDrifting = true; } else { isDrifting = false; }
 	}
 
 	private void CheckDrift()
@@ -68,20 +53,5 @@ public class CarController : MonoBehaviour, IDamagable
 		{
 			T.emitting = _setEmitterTo;
 		}
-	}
-
-	public void TakeDamage(int _damage)
-	{
-		Health -= _damage;
-
-		if (Health <= 0)
-		{
-			Die();
-		}
-	}
-
-	private void Die()
-	{
-		Debug.Log("DIEEE!!");
 	}
 }
