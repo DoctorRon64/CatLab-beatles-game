@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7527492450851665726}
   - component: {fileID: 3652690560575106201}
   - component: {fileID: -7522843641197760168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ObjectAddScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinAmount: 10
+  highscoreManager: {fileID: 0}
