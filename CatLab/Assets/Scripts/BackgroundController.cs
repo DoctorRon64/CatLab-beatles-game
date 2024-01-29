@@ -9,6 +9,7 @@ public class BackgroundController : MonoBehaviour
 	[SerializeField] private float bpm = 120f;
 	[SerializeField] private GameObject backgroundVersion1;
 	[SerializeField] private GameObject backgroundVersion2;
+	[SerializeField] private GameObject backgroundStatic;
 	[SerializeField] private HighscoreManager highscoreManager;
 
 	private float timeBetweenSwitches;
@@ -23,6 +24,7 @@ public class BackgroundController : MonoBehaviour
 	{
 		MoveBackground(backgroundVersion1);
 		MoveBackground(backgroundVersion2);
+		MoveBackground(backgroundStatic);
 	}
 
 	private void MoveBackground(GameObject background)
