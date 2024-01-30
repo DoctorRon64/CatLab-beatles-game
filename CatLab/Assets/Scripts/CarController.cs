@@ -5,10 +5,12 @@ public class CarController : VehicleController
 {
     private Rigidbody2D rb2d;
 	private bool isDrifting;
+	private bool isInvincible = false;
 	[SerializeField] private ParticleSystem particleDust;
 	[SerializeField] private HighscoreManager scoreManage;
 	[SerializeField] private TrailRenderer[] TyreMarks;
 	[SerializeField] private float CarSpeed = 1.0f;
+	[SerializeField] private float InviniblilityFrames = 3.0f;
 
 	private void Awake()
 	{
@@ -42,11 +44,27 @@ public class CarController : VehicleController
 		if (horizontalInput < 0f) { isDrifting = true; } else { isDrifting = false; }
 	}
 
+	public void InvincibleFrames()
+	{
+		isInvincible = true;
+		Invoke("ResetInvincibility", InviniblilityFrames);
+	}
+
+	private void ResetInvincibility()
+	{
+		if (isInvincible)
+		{
+			isInvincible = false;	
+		}
+	}
+
 	public override void TakeDamage(int _damage)
 	{
-		base.TakeDamage(_damage);
-
-		scoreManage.RemoveScore(3);
+		if (!isInvincible)
+		{
+			base.TakeDamage(_damage);
+			scoreManage.RemoveScore(3);
+		}
 	}
 
 	private void CheckDrift()

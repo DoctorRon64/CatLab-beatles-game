@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using UnityEngine.TextCore.Text;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,13 +19,17 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float typingSpeed = 1.0f;
     [SerializeField] private bool isDialogueActive = false;
     [SerializeField] private Animator anim;
+    [SerializeField] private AudioSource dialougeAudioSource;
+    [SerializeField] private DialogueCharacterArchive dialogueCharacterArchive;
+    [SerializeField] private LoadingScene skipToNextScene;
 
-    private void Awake()
+	private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+        dialogueCharacterArchive = GetComponent<DialogueCharacterArchive>();
     }
 
     private void Update()
@@ -37,7 +42,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue _dialogue)
     {
-        isDialogueActive = true;
+		isDialogueActive = true;
 
         anim.Play("Show");
         lines.Clear();
@@ -60,11 +65,13 @@ public class DialogueManager : MonoBehaviour
         anim.Play("Show");
 
         DialogueLine currentLine = lines.Dequeue();
+        DialogueCharacter character = dialogueCharacterArchive.characterList[currentLine.characterIndex];
 
-        characterImage.sprite = currentLine.character.icon;
-        characterName.text = currentLine.character.characterName;
+		characterImage.sprite = character.icon;
+		characterName.text = character.characterName;
+		dialougeAudioSource.clip = character.audioClip;
 
-        StopAllCoroutines();
+		StopAllCoroutines();
 
         StartCoroutine(TypeSentence(currentLine));
     }
@@ -72,8 +79,15 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(DialogueLine _dialogue)
     {
         dialogueArea.text = "";
+   
+
         foreach(char letter in _dialogue.dialogueText.ToCharArray())
         {
+            if (dialougeAudioSource.isPlaying == false)
+            {
+                dialougeAudioSource.Play();
+            }
+
             dialogueArea.text += letter;
 			yield return new WaitForSeconds(typingSpeed);
         }
@@ -92,7 +106,6 @@ public class DialogueManager : MonoBehaviour
 
     void SkipScene()
     {
-        SkipToNextScene skipToNextScene = GetComponent<SkipToNextScene>();
         skipToNextScene.SkipScene();
     }
 }

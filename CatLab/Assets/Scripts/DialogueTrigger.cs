@@ -2,18 +2,11 @@ using UnityEngine;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class DialogueCharacter
-{
-    public string characterName;
-    public Sprite icon;
-}
-
-[System.Serializable]
 public class DialogueLine
 {
-    public DialogueCharacter character;
-    [TextArea(0, 10)]
-    public string dialogueText;
+	public int characterIndex;
+	[TextArea(0, 10)]
+	public string dialogueText;
 }
 
 [System.Serializable]

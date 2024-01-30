@@ -9,7 +9,11 @@ public class DamageObject : MonoBehaviour
 		if (collision.gameObject.TryGetComponent<IDamagable>(out IDamagable _damagable))
 		{
 			_damagable.TakeDamage(damageAmount);
-			Destroy(gameObject);
+		}
+
+		if (collision.gameObject.TryGetComponent<CarController>(out CarController _carController))
+		{
+			_carController.InvincibleFrames();
 		}
 	}
 }
