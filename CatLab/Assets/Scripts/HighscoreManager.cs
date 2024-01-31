@@ -29,6 +29,11 @@ public class HighscoreManager : MonoBehaviour
 		HighScore += addScoreValue;
 	}
 
+	public void AddScoreAmount(int _score)
+	{
+		HighScore += _score;
+	}
+
 	public void RemoveScore(int score)
 	{
 		HighScore -= score;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3385109359211276894}
   - component: {fileID: 179988011902704447}
   - component: {fileID: 6184585178100231693}
-  - component: {fileID: 1514884598786191393}
+  - component: {fileID: 486044847016529687}
   m_Layer: 6
   m_Name: Car
   m_TagString: Untagged
@@ -317,8 +317,8 @@ WheelJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
---- !u!235 &1514884598786191393
-WheelJoint2D:
+--- !u!231 &486044847016529687
+SpringJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -332,16 +332,12 @@ WheelJoint2D:
   m_BreakTorque: Infinity
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -0.32284668, y: 0.41393986}
-  m_ConnectedAnchor: {x: -0.2416717, y: -0.44102353}
-  m_Suspension:
-    m_DampingRatio: 0.7
-    m_Frequency: 10
-    m_Angle: 90
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
+  m_Anchor: {x: -0.17288437, y: 0.7044318}
+  m_ConnectedAnchor: {x: -0.77423495, y: -0.9562696}
+  m_AutoConfigureDistance: 1
+  m_Distance: 0.0058626276
+  m_DampingRatio: 0
+  m_Frequency: 15
 --- !u!1 &7125121506134222792
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,8 +449,8 @@ Transform:
   m_GameObject: {fileID: 7494102435997896028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11, y: 0.9, z: 0}
-  m_LocalScale: {x: 0.662581, y: 0.662581, z: 0.19877431}
+  m_LocalPosition: {x: -0.071, y: 0.845, z: 0}
+  m_LocalScale: {x: 0.1269149, y: 0.1269149, z: 0.03807447}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8338724037997155657}
@@ -500,12 +496,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 722e975738754044793c7e124e1e9c5e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e132392f962145c43ae9777f107a952d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.45, y: 2.52}
+  m_Size: {x: 7.29, y: 13.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -526,7 +522,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

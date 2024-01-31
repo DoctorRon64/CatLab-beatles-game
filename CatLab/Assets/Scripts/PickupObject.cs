@@ -16,7 +16,8 @@ public class PickupObject : MonoBehaviour
 	{
 		if (collision.gameObject.TryGetComponent<IDamagable>(out IDamagable _damagable))
 		{
-			highscoreManager.AddScore();
+			_damagable.TakeDamage(-1);
+			highscoreManager.AddScoreAmount(coinAmount);
 			Destroy(gameObject);
 		}
 	}

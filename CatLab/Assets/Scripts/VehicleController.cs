@@ -18,7 +18,7 @@ public class VehicleController : MonoBehaviour, IDamagable
 		{
 			if (health != value)
 			{
-				health = value;
+				health = Mathf.Clamp(value, 0, MaxHealth);
 				OnHealthChanged(health);
 			}
 		}

@@ -60,7 +60,7 @@ public class CarController : VehicleController
 
 	public override void TakeDamage(int _damage)
 	{
-		if (!isInvincible)
+        if (!isInvincible)
 		{
 			base.TakeDamage(_damage);
 			scoreManage.RemoveScore(3);
