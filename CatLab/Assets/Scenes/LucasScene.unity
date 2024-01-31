@@ -40616,10 +40616,6 @@ PrefabInstance:
       value: 0.00586242
       objectReference: {fileID: 0}
     - target: {fileID: 5173414484845744701, guid: 8781471faec4fde4aacced703b2a539f, type: 3}
-      propertyPath: MaxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173414484845744701, guid: 8781471faec4fde4aacced703b2a539f, type: 3}
       propertyPath: scoreManage
       value: 
       objectReference: {fileID: 812086167}
