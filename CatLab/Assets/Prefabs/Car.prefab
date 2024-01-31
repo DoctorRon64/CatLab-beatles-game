@@ -348,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678442380292331686}
   - component: {fileID: 8883435804005235530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarTexture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 5471415073062114079}
   - component: {fileID: 4885609234961461054}
   - component: {fileID: 1845591175280254056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PeteBestSmoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
