@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickupObject : MonoBehaviour
 {
 	[SerializeField] private int coinAmount;
-	[SerializeField] private HighscoreManager highscoreManager;\
+	[SerializeField] private HighscoreManager highscoreManager;
 
 	private void Awake()
 	{
