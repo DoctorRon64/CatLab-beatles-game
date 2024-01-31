@@ -100,12 +100,12 @@ public class DialogueManager : MonoBehaviour
 
         if (lines.Count == 0)
         {
-            Invoke("SkipScene", 1.0f);
+            Invoke("SkipScene", 0f);
         }
     }
 
     void SkipScene()
     {
-        skipToNextScene.SkipScene();
+         skipToNextScene.SkipScene();
     }
 }
