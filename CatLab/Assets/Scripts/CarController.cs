@@ -6,8 +6,10 @@ public class CarController : VehicleController
     private Rigidbody2D rb2d;
 	private bool isDrifting;
 	private bool isInvincible = false;
+	private HighscoreManager scoreManage;
+	private GameManager gameManager;
+
 	[SerializeField] private ParticleSystem particleDust;
-	[SerializeField] private HighscoreManager scoreManage;
 	[SerializeField] private TrailRenderer[] TyreMarks;
 	[SerializeField] private float CarSpeed = 1.0f;
 	[SerializeField] private float InviniblilityFrames = 3.0f;
@@ -16,6 +18,8 @@ public class CarController : VehicleController
 	{
 		Health = MaxHealth;
 		rb2d = GetComponent<Rigidbody2D>();
+		gameManager = FindObjectOfType<GameManager>();
+		scoreManage = FindObjectOfType<HighscoreManager>();
 	}
 
 	private void Update()
@@ -58,14 +62,6 @@ public class CarController : VehicleController
 		}
 	}
 
-	public override void TakeDamage(int _damage)
-	{
-        if (!isInvincible)
-		{
-			base.TakeDamage(_damage);
-			scoreManage.RemoveScore(3);
-		}
-	}
 
 	private void CheckDrift()
 	{
@@ -79,5 +75,18 @@ public class CarController : VehicleController
 		{
 			T.emitting = _setEmitterTo;
 		}
+	}
+	public override void TakeDamage(int _damage)
+	{
+        if (!isInvincible)
+		{
+			base.TakeDamage(_damage);
+			scoreManage.RemoveScore(3);
+		}
+	}
+
+	public override void Die()
+	{
+		gameManager.GameOver();
 	}
 }
