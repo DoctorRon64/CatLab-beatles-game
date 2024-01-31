@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class BackgroundController : MonoBehaviour
+public class BackgroundManager : MonoBehaviour
 {
 	[SerializeField] private float scrollSpeed = 5f;
 	[SerializeField] private float bpm = 120f;
