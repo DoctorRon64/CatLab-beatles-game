@@ -4,13 +4,11 @@ using UnityEngine;
 public class CarController : VehicleController
 {
     private Rigidbody2D rb2d;
-	private bool isDrifting;
 	private bool isInvincible = false;
 	private HighscoreManager scoreManage;
 	private GameManager gameManager;
 
 	[SerializeField] private ParticleSystem particleDust;
-	[SerializeField] private TrailRenderer[] TyreMarks;
 	[SerializeField] private float CarSpeed = 1.0f;
 	[SerializeField] private float InviniblilityFrames = 3.0f;
 
@@ -25,7 +23,6 @@ public class CarController : VehicleController
 	private void Update()
 	{
 		HandleInput();
-		CheckDrift();
 	}
 
 	private void LateUpdate()
@@ -44,8 +41,6 @@ public class CarController : VehicleController
 		verticalInput *= CarSpeed;
 
 		rb2d.velocity = new Vector3(horizontalInput, verticalInput, 0);
-
-		if (horizontalInput < 0f) { isDrifting = true; } else { isDrifting = false; }
 	}
 
 	public void InvincibleFrames()
@@ -62,20 +57,6 @@ public class CarController : VehicleController
 		}
 	}
 
-
-	private void CheckDrift()
-	{
-		if (isDrifting) { EmitterSettings(true); }
-		else { EmitterSettings(false); }
-	}
-
-	private void EmitterSettings(bool _setEmitterTo)
-	{
-		foreach(TrailRenderer T in TyreMarks)
-		{
-			T.emitting = _setEmitterTo;
-		}
-	}
 	public override void TakeDamage(int _damage)
 	{
         if (!isInvincible)

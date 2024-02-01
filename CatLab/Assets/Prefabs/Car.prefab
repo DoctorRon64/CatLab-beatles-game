@@ -56,12 +56,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62564f5eee5e93149b29712585ee1b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 20
+  MaxHealth: 10
   particleDust: {fileID: 2388806926067460929}
-  scoreManage: {fileID: 0}
-  TyreMarks:
-  - {fileID: 3274353037737028121}
-  - {fileID: 3163964892647629057}
   CarSpeed: 10
   InviniblilityFrames: 3
 --- !u!50 &6026961338442706851
@@ -905,11 +901,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5411a018f1c764b8065bcfce2db93c, type: 3}
---- !u!96 &3274353037737028121 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 5492595258418693512, guid: 1d5411a018f1c764b8065bcfce2db93c, type: 3}
-  m_PrefabInstance: {fileID: 7010214507964526481}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4647919717285034932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2434743908745155621, guid: 1d5411a018f1c764b8065bcfce2db93c, type: 3}
@@ -976,11 +967,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5411a018f1c764b8065bcfce2db93c, type: 3}
---- !u!96 &3163964892647629057 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 5492595258418693512, guid: 1d5411a018f1c764b8065bcfce2db93c, type: 3}
-  m_PrefabInstance: {fileID: 7480820960000156809}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5051004308696740012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2434743908745155621, guid: 1d5411a018f1c764b8065bcfce2db93c, type: 3}

@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private HighscoreManager highscoreManager;
 	[SerializeField] private Slider healthSlider;
 	[SerializeField] private TextMeshProUGUI highScoreText;
+	[SerializeField] private TextMeshProUGUI highScoreEndText;
 
 	private void Update()
 	{
@@ -22,9 +23,15 @@ public class UIManager : MonoBehaviour
 		carController.onHealthChanged += UpdateCarHealth;
 	}
 
+	public void HideAndShowHighScore()
+	{
+		highScoreText.enabled = false;
+	}
+
 	private void UpdateScoreText(int _newScore)
 	{
 		highScoreText.text = "High Score: " + _newScore + " Km";
+		highScoreEndText.text = "You have driven: " + _newScore + "Kilometers";
 	}
 
 	private void UpdateCarHealth(int _newHealth)
