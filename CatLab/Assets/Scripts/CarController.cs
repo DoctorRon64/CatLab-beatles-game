@@ -10,6 +10,8 @@ public class CarController : VehicleController
 	public delegate void OnPlayerDied();
 	public event OnPlayerDied onPlayerDied;
 
+	private bool isDead;
+
 	[SerializeField] private ParticleSystem particleDust;
 	[SerializeField] private float CarSpeed = 1.0f;
 	[SerializeField] private float InviniblilityFrames = 3.0f;
@@ -41,7 +43,10 @@ public class CarController : VehicleController
 		horizontalInput *= CarSpeed;
 		verticalInput *= CarSpeed;
 
-		rb2d.velocity = new Vector3(horizontalInput, verticalInput, 0);
+		if (!isDead)
+		{
+			rb2d.velocity = new Vector3(horizontalInput, verticalInput, 0);
+		}
 	}
 
 	public void InvincibleFrames()
@@ -69,6 +74,7 @@ public class CarController : VehicleController
 
 	protected override void Die()
 	{
+		isDead = true;
 		onPlayerDied?.Invoke();
 	}
 }

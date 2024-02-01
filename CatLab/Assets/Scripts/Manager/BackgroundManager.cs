@@ -12,6 +12,7 @@ public class BackgroundManager : MonoBehaviour
 	[SerializeField] private GameObject backgroundStatic;
 	[SerializeField] private HighscoreManager highscoreManager;
 
+	private bool stoppedGame = false;
 	private float timeBetweenSwitches;
 
 	private void Start()
@@ -22,9 +23,12 @@ public class BackgroundManager : MonoBehaviour
 
 	private void Update()
 	{
-		MoveBackground(backgroundVersion1);
-		MoveBackground(backgroundVersion2);
-		MoveBackground(backgroundStatic);
+		if (!stoppedGame)
+		{ 
+			MoveBackground(backgroundVersion1);
+			MoveBackground(backgroundVersion2);
+			MoveBackground(backgroundStatic);
+		}
 	}
 
 	private void MoveBackground(GameObject background)
@@ -51,6 +55,12 @@ public class BackgroundManager : MonoBehaviour
 			backgroundVersion2.SetActive(false);
 			AddScore();
 		}
+	}
+
+	public void GameStopped()
+	{
+		stoppedGame = true;
+		CancelInvoke("SwitchBackground");
 	}
 
 	private void AddScore()
