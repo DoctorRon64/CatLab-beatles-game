@@ -54,4 +54,9 @@ public class VehicleController : MonoBehaviour, IDamagable
 	{
 		Debug.Log("DIEEE!!");
 	}
+
+	public virtual void GrandHealth(int _health)
+	{
+		Debug.Log("granted" + _health);
+	}
 }

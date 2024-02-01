@@ -5,7 +5,6 @@ public class CarController : VehicleController
 {
     private Rigidbody2D rb2d;
 	private bool isInvincible = false;
-	private HighscoreManager scoreManage;
 
 	public delegate void OnPlayerDied();
 	public event OnPlayerDied onPlayerDied;
@@ -20,7 +19,7 @@ public class CarController : VehicleController
 	{
 		Health = MaxHealth;
 		rb2d = GetComponent<Rigidbody2D>();
-		scoreManage = FindObjectOfType<HighscoreManager>();
+		
 	}
 
 	private void Update()
@@ -68,8 +67,12 @@ public class CarController : VehicleController
         if (!isInvincible)
 		{
 			base.TakeDamage(_damage);
-			scoreManage.RemoveScore(3);
 		}
+	}
+
+	public override void GrandHealth(int _health)
+	{
+		Health += _health;
 	}
 
 	protected override void Die()

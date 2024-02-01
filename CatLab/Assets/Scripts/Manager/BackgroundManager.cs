@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class BackgroundManager : MonoBehaviour
 {
@@ -65,6 +62,6 @@ public class BackgroundManager : MonoBehaviour
 
 	private void AddScore()
 	{
-		highscoreManager.AddScore();
+		highscoreManager.AddScorePerBeat();
 	}
 }

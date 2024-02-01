@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PickupObject : MonoBehaviour
 {
-	[SerializeField] private int coinAmount;
+	[SerializeField] private int scoreAmount = 1;
+	[SerializeField] private int healthAddAmount = 1;
 	[SerializeField] private HighscoreManager highscoreManager;
-
 	[SerializeField] GameObject pickupParticlesPrefab;
 
 	private void Awake()
@@ -18,8 +18,8 @@ public class PickupObject : MonoBehaviour
 	{
 		if (collision.gameObject.TryGetComponent<IDamagable>(out IDamagable _damagable))
 		{
-			_damagable.TakeDamage(-1);
-			highscoreManager.AddScoreAmount(coinAmount);
+			_damagable.GrandHealth(healthAddAmount);
+			highscoreManager.AddScoreAmount(scoreAmount);
 			Instantiate(pickupParticlesPrefab, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}

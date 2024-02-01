@@ -24,7 +24,7 @@ public class HighscoreManager : MonoBehaviour
 		} 
 	}
 
-	public void AddScore()
+	public void AddScorePerBeat()
 	{
 		HighScore += addScoreValue;
 	}
