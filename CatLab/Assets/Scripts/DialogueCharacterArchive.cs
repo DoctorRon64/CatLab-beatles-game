@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using FMODUnity;
 
 [System.Serializable]
 public class DialogueCharacter
 {
 	public string characterName;
 	public Sprite icon;
-	public AudioClip audioClip;
+
+	public EventReference eventName;
 }
 
 [System.Serializable]
