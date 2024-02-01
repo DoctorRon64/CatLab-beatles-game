@@ -16376,7 +16376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 7
-  bpm: 64
+  bpm: 57
   backgroundVersion1: {fileID: 598458117}
   backgroundVersion2: {fileID: 277950797}
   backgroundStatic: {fileID: 1853908960}
