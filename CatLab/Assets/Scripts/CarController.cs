@@ -6,7 +6,9 @@ public class CarController : VehicleController
     private Rigidbody2D rb2d;
 	private bool isInvincible = false;
 	private HighscoreManager scoreManage;
-	private GameManager gameManager;
+
+	public delegate void OnPlayerDied();
+	public event OnPlayerDied onPlayerDied;
 
 	[SerializeField] private ParticleSystem particleDust;
 	[SerializeField] private float CarSpeed = 1.0f;
@@ -16,7 +18,6 @@ public class CarController : VehicleController
 	{
 		Health = MaxHealth;
 		rb2d = GetComponent<Rigidbody2D>();
-		gameManager = FindObjectOfType<GameManager>();
 		scoreManage = FindObjectOfType<HighscoreManager>();
 	}
 
@@ -66,8 +67,8 @@ public class CarController : VehicleController
 		}
 	}
 
-	public override void Die()
+	protected override void Die()
 	{
-		gameManager.GameOver();
+		onPlayerDied?.Invoke();
 	}
 }

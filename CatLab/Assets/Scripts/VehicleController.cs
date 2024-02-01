@@ -50,7 +50,7 @@ public class VehicleController : MonoBehaviour, IDamagable
 		}
 	}
 
-	public virtual void Die()
+	protected virtual void Die()
 	{
 		Debug.Log("DIEEE!!");
 	}

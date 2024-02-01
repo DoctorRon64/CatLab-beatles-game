@@ -30,8 +30,8 @@ public class UIManager : MonoBehaviour
 
 	private void UpdateScoreText(int _newScore)
 	{
-		highScoreText.text = "High Score: " + _newScore + " Km";
-		highScoreEndText.text = "You have driven: " + _newScore + "Kilometers";
+		highScoreText.text = "High Score: " + _newScore + " Beatz";
+		highScoreEndText.text = "--- High score Was ---\n" + _newScore + " Beatz";
 	}
 
 	private void UpdateCarHealth(int _newHealth)
