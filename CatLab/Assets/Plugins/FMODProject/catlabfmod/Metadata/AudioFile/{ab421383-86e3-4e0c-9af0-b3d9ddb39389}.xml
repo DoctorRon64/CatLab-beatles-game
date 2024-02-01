@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ab421383-86e3-4e0c-9af0-b3d9ddb39389}">
+		<property name="assetPath">
+			<value>JohnTalk.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.21429166666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e0d151ab-2029-4177-b8fa-21c4e782643a}</destination>
+		</relationship>
+	</object>
+</objects>

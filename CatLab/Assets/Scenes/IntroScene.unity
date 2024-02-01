@@ -629,6 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!81 &519420034
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1102,7 +1103,6 @@ MonoBehaviour:
   typingSpeed: 0.01
   isDialogueActive: 0
   anim: {fileID: 912929676}
-  dialougeAudioSource: {fileID: 831859997}
   dialogueCharacterArchive: {fileID: 912929680}
   skipToNextScene: {fileID: 1772407662}
 --- !u!114 &912929678
@@ -1120,25 +1120,22 @@ MonoBehaviour:
   dialogue:
     lines:
     - characterIndex: 0
-      dialogueText: This is the president of the united states
-    - characterIndex: 1
-      dialogueText: Wow dat is super cool alles kan in twee weken als je een goed
-        concept hebt waar je jullie zijn goed opweg jullie hebben alle ingredieent
-        ik snap dat jullie veel zouden willen maar in mijn vak in theater van hey
-        dit is het concept maar dat leidt naar een verhaal.
+      dialogueText: '"Guys we have to talk, that recording session was a waste of
+        time."'
     - characterIndex: 2
-      dialogueText: I Like to drum and bass and stuff
+      dialogueText: '"I agree, the drums just don''t feel tight, I''m having trouble
+        locking in!"'
     - characterIndex: 3
-      dialogueText: WHATTHE HEEEEEEEEEULLLLLLL
+      dialogueText: '"But what can we do? Pete brings in large crowds, and the girls
+        love him."'
+    - characterIndex: 2
+      dialogueText: "\"That's true, and his stage presence is great\u2026\""
     - characterIndex: 0
-      dialogueText: But why do you guys thinkg that
-    - characterIndex: 1
-      dialogueText: I hope u eat shit
-    - characterIndex: 0
-      dialogueText: Not nice
-    - characterIndex: 3
-      dialogueText: What are all of u guys saying bro what the hell man u guys should
-        really shot the fuck up
+      dialogueText: '"I don''t care, we need a better drummer if we want to record
+        a hit song. I heard George Martin knows a good session drummer."'
+    - characterIndex: 4
+      dialogueText: '"Good Lord, every time I hear their songs, I always think about
+        that moment." '
 --- !u!114 &912929680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,16 +1151,49 @@ MonoBehaviour:
   characterList:
   - characterName: John Lennon
     icon: {fileID: 21300000, guid: d79153a20b952244abb19d8a8f4014e3, type: 3}
-    audioClip: {fileID: 8300000, guid: 16f1b9c90fd516649a13cf8791c00bc7, type: 3}
+    eventName:
+      Guid:
+        Data1: 625329098
+        Data2: 1111263094
+        Data3: -114269283
+        Data4: 560489713
+      Path: event:/SFX/People Talking/JohnTalk
   - characterName: Ringo Star
     icon: {fileID: 21300000, guid: 30892505a4a974b46969655d6a100266, type: 3}
-    audioClip: {fileID: 8300000, guid: e03d3e6291460664a91ba7ec20ecc6a6, type: 3}
+    eventName:
+      Guid:
+        Data1: 1828015479
+        Data2: 1306720584
+        Data3: 1669971840
+        Data4: -438477116
+      Path: event:/SFX/People Talking/RingoTalk
   - characterName: Paul McCartney
     icon: {fileID: 21300000, guid: 82721f6768db93e4396576f3e99249f7, type: 3}
-    audioClip: {fileID: 8300000, guid: 3e1aee7db19fd594d97aab32f09ba464, type: 3}
+    eventName:
+      Guid:
+        Data1: 882725768
+        Data2: 1074992529
+        Data3: 1664027826
+        Data4: -810842148
+      Path: event:/SFX/People Talking/PaulTalk
   - characterName: George Harisson
     icon: {fileID: 21300000, guid: 2f985c2332c055540b7cfa51c52ecae6, type: 3}
-    audioClip: {fileID: 8300000, guid: 72cb8f502e1d4f34d9b35a778c110ba0, type: 3}
+    eventName:
+      Guid:
+        Data1: -403344583
+        Data2: 1324174009
+        Data3: 1879462325
+        Data4: -1608027707
+      Path: event:/SFX/People Talking/GeorgeTalk
+  - characterName: Pete Best
+    icon: {fileID: 21300000, guid: 7de087d12bfde2b4286fc0a8071bc2c2, type: 3}
+    eventName:
+      Guid:
+        Data1: -1767046182
+        Data2: 1078468904
+        Data3: -2013243756
+        Data4: -22895539
+      Path: event:/SFX/People Talking/Pete Bets Talk
 --- !u!1 &961575644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1328,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961575644}
   m_CullTransparentMesh: 1
+--- !u!1 &1000750223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000750225}
+  - component: {fileID: 1000750224}
+  m_Layer: 0
+  m_Name: BgDIaloguemanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1000750224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000750223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426f52ac37389c8488d271e657617695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1250398348}
+--- !u!4 &1000750225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000750223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.20197228, y: -0.6219579, z: 847.5077}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1250398350}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213494428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,6 +1549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250398350}
   - component: {fileID: 1250398349}
+  - component: {fileID: 1250398351}
   m_Layer: 0
   m_Name: Bar
   m_TagString: Untagged
@@ -1520,7 +1598,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300000, guid: 52b2f0656593089479c39e514310ae59, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 425bb903c03364240bae83e7b87e888a, type: 3}
   m_Color: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1539,13 +1617,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250398348}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.47521824, y: 0.43201658, z: 0.43201658}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.30867228, y: 0.6219579, z: -847.5077}
+  m_LocalScale: {x: 1.197467, y: 1.238894, z: 0.43201658}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1000750225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250398351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250398348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426f52ac37389c8488d271e657617695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 425bb903c03364240bae83e7b87e888a, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1756854673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,7 +1701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 15811156}
-  postLoadingDelay: 100
+  loadingLength: 2
 --- !u!4 &1772407663
 Transform:
   m_ObjectHideFlags: 0
@@ -2146,7 +2240,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1756854676}
-  - {fileID: 1250398350}
+  - {fileID: 1000750225}
   - {fileID: 1871194137}
   - {fileID: 1804449337}
   - {fileID: 1248177180}
