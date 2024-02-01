@@ -143,5 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c86250b071aaa4b92a49982b03eaf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinAmount: 10
+  coinAmount: 1
   highscoreManager: {fileID: 0}
+  pickupParticlesPrefab: {fileID: 3312516078693074833, guid: 0a6e0043af333cc47ba0aa346fdd74a6, type: 3}

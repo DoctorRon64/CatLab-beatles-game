@@ -7,6 +7,8 @@ public class PickupObject : MonoBehaviour
 	[SerializeField] private int coinAmount;
 	[SerializeField] private HighscoreManager highscoreManager;
 
+	[SerializeField] GameObject pickupParticlesPrefab;
+
 	private void Awake()
 	{
 		highscoreManager = FindObjectOfType<HighscoreManager>();
@@ -18,6 +20,7 @@ public class PickupObject : MonoBehaviour
 		{
 			_damagable.TakeDamage(-1);
 			highscoreManager.AddScoreAmount(coinAmount);
+			Instantiate(pickupParticlesPrefab, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
 	}
