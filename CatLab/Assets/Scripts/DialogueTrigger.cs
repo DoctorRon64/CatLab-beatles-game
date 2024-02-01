@@ -7,6 +7,7 @@ public class DialogueLine
 	public int characterIndex;
 	[TextArea(0, 10)]
 	public string dialogueText;
+    public bool isBackgroundChanged = false;
 }
 
 [System.Serializable]

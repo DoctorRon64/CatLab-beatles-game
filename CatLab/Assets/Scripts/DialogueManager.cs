@@ -21,6 +21,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private AudioSource dialougeAudioSource;
     [SerializeField] private DialogueCharacterArchive dialogueCharacterArchive;
+    [SerializeField] private BackgroundDialogueController backgroundDialogueController;
     [SerializeField] private LoadingScene skipToNextScene;
 
 	private void Awake()
@@ -70,6 +71,10 @@ public class DialogueManager : MonoBehaviour
 		characterImage.sprite = character.icon;
 		characterName.text = character.characterName;
 		dialougeAudioSource.clip = character.audioClip;
+		if (currentLine.isBackgroundChanged)
+        {
+            backgroundDialogueController.NextBg();
+		}
 
 		StopAllCoroutines();
 
