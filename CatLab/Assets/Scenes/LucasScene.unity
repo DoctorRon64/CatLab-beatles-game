@@ -15939,7 +15939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 7
-  bpm: 48.075
+  bpm: 64
   backgroundVersion1: {fileID: 598458117}
   backgroundVersion2: {fileID: 277950797}
   backgroundStatic: {fileID: 1853908960}
@@ -40398,6 +40398,10 @@ PrefabInstance:
       value: 0.0058627427
       objectReference: {fileID: 0}
     - target: {fileID: 5173414484845744701, guid: 8781471faec4fde4aacced703b2a539f, type: 3}
+      propertyPath: MaxHealth
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5173414484845744701, guid: 8781471faec4fde4aacced703b2a539f, type: 3}
       propertyPath: scoreManage
       value: 
       objectReference: {fileID: 812086167}
@@ -41370,7 +41374,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1c8ee78c986bbbd488aff3f56011bd7c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a28a22eb10adc2d41b95daac2f33a98e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -42118,7 +42122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 20
   particleDust: {fileID: 357855126}
-  scoreManage: {fileID: 812086167}
   TyreMarks:
   - {fileID: 1921027374}
   - {fileID: 1702612715}
