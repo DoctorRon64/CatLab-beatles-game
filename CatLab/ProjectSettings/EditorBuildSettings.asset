@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LucasScene.unity
     guid: 18a5a51174cdbc4489bc50d1ff226f29
   - enabled: 1
-    path: Assets/Scenes/RonScene.unity
-    guid: 5aa53834e2bb2554d98b2972f548100f
+    path: Assets/Scenes/WinScene.unity
+    guid: 3097361bf36f4b941a3dcac613fba6f5
   m_configObjects: {}

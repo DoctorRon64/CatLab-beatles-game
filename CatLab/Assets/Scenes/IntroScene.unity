@@ -1362,7 +1362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1046, y: 210}
+  m_AnchoredPosition: {x: 960, y: 210}
   m_SizeDelta: {x: 2700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &912929674
@@ -1545,7 +1545,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 7de087d12bfde2b4286fc0a8071bc2c2, type: 3}
     audioClip: {fileID: 8300000, guid: 9cebf1c0e01b5884ba101cf5c42d02f5, type: 3}
   - characterName: Magical Beetle
-    icon: {fileID: 21300000, guid: 7de087d12bfde2b4286fc0a8071bc2c2, type: 3}
+    icon: {fileID: 21300000, guid: a69da7b4a3e2f2645863ce6598c6ba7c, type: 3}
     audioClip: {fileID: 8300000, guid: d5eb94d57b54f074882679233b4e2c47, type: 3}
 --- !u!1 &961575644
 GameObject:
