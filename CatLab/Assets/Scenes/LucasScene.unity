@@ -40332,7 +40332,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 486044847016529687, guid: 8781471faec4fde4aacced703b2a539f, type: 3}
       propertyPath: m_Distance
-      value: 0.0058627427
+      value: 0.00586242
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293616342911672390, guid: 8781471faec4fde4aacced703b2a539f, type: 3}
+      propertyPath: m_Anchor.x
+      value: -2.046264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293616342911672390, guid: 8781471faec4fde4aacced703b2a539f, type: 3}
+      propertyPath: m_Distance
+      value: 0.025325375
       objectReference: {fileID: 0}
     - target: {fileID: 5173414484845744701, guid: 8781471faec4fde4aacced703b2a539f, type: 3}
       propertyPath: MaxHealth
