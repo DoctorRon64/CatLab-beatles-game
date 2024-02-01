@@ -84,7 +84,6 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(DialogueLine _dialogue)
     {
         dialogueArea.text = "";
-   
 
         foreach(char letter in _dialogue.dialogueText.ToCharArray())
         {
@@ -111,6 +110,6 @@ public class DialogueManager : MonoBehaviour
 
     void SkipScene()
     {
-         skipToNextScene.SkipScene();
+        skipToNextScene.SkipScene();
     }
 }
