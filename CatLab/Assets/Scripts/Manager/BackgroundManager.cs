@@ -12,6 +12,9 @@ public class BackgroundManager : MonoBehaviour
 	private bool stoppedGame = false;
 	private float timeBetweenSwitches;
 
+	public float distanceCounter;
+	[SerializeField] float bpm2 = 64;
+
 	private void Start()
 	{
 		timeBetweenSwitches = 60f / bpm;
@@ -25,6 +28,12 @@ public class BackgroundManager : MonoBehaviour
 			MoveBackground(backgroundVersion1);
 			MoveBackground(backgroundVersion2);
 			MoveBackground(backgroundStatic);
+		}
+
+		distanceCounter += Time.deltaTime;
+		if (distanceCounter >= 66.263f)
+		{
+			bpm = bpm2;
 		}
 	}
 
