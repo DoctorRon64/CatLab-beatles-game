@@ -5553,7 +5553,7 @@ MonoBehaviour:
   textList:
   - 'John: "Your sense of time has certainly improved, I guess we can work with you
     from now on!"'
-  - 'Paul: "Nice timing! Glad to have you back, buddy :)"'
+  - 'Paul: "Nice timing! Glad to have you back, lad :)"'
   - 'George: "Wow you proved us wrong! Will you be my wingman after our next gig?"'
   - 'Magical Beetle: "Congratulations! You reclaimed your destiny :D" '
   text: {fileID: 1450638538}

@@ -1821,7 +1821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterList:
   - characterName: John Lennon
-    icon: {fileID: 21300000, guid: d79153a20b952244abb19d8a8f4014e3, type: 3}
+    icon: {fileID: 21300000, guid: bbb56cd941aa2c74aab98338fc852316, type: 3}
     audioClip: {fileID: 8300000, guid: 16f1b9c90fd516649a13cf8791c00bc7, type: 3}
   - characterName: Ringo Star
     icon: {fileID: 21300000, guid: c80d85430a4f27945b2f6c730418e1d4, type: 3}
