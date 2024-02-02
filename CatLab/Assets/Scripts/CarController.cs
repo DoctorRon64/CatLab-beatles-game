@@ -9,7 +9,13 @@ public class CarController : VehicleController
 	public delegate void OnPlayerDied();
 	public event OnPlayerDied onPlayerDied;
 
-	private bool isDead;
+	public delegate void OnPlayerHit();
+    public event OnPlayerHit onPlayerHit;
+
+    public delegate void OnPlayerHeal();
+    public event OnPlayerHeal onPlayerHeal;
+
+    private bool isDead;
 
 	[SerializeField] private ParticleSystem particleDust;
 	[SerializeField] private float CarSpeed = 1.0f;
@@ -64,6 +70,7 @@ public class CarController : VehicleController
 
 	public override void TakeDamage(int _damage)
 	{
+        onPlayerHit?.Invoke();
         if (!isInvincible)
 		{
 			base.TakeDamage(_damage);
@@ -72,7 +79,8 @@ public class CarController : VehicleController
 
 	public override void GrandHealth(int _health)
 	{
-		Health += _health;
+        onPlayerHeal?.Invoke();
+        Health += _health;
 	}
 
 	protected override void Die()

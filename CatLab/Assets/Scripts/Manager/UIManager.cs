@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private Slider healthSlider;
 	[SerializeField] private TextMeshProUGUI highScoreText;
 	[SerializeField] private TextMeshProUGUI highScoreEndText;
-
 	private void Update()
 	{
 		healthSlider.transform.position = new Vector3(carController.transform.position.x, carController.transform.position.y + 1.2f, 0);

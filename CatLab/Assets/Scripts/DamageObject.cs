@@ -16,7 +16,7 @@ public class DamageObject : MonoBehaviour
 		if (collision.gameObject.TryGetComponent<IDamagable>(out IDamagable _damagable))
 		{
 			_damagable.TakeDamage(damageAmount);
-			scoreManager.RemoveScore(damageAmount);
+			scoreManager.RemoveScore(scoreAmount);
 		}
 
 		if (collision.gameObject.TryGetComponent<CarController>(out CarController _carController))

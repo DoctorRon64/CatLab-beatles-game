@@ -17,7 +17,6 @@ public class DialogueManager : MonoBehaviour
     public Queue<DialogueLine> lines = new Queue<DialogueLine>();
     [Range(0, 2)]
     [SerializeField] private float typingSpeed = 1.0f;
-    [SerializeField] private bool isDialogueActive = false;
     [SerializeField] private Animator anim;
     [SerializeField] private AudioSource dialougeAudioSource;
     [SerializeField] private DialogueCharacterArchive dialogueCharacterArchive;
@@ -43,7 +42,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue _dialogue)
     {
-		isDialogueActive = true;
 
         anim.Play("Show");
         lines.Clear();
@@ -99,7 +97,6 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-		isDialogueActive = false;
         anim.Play("Hide");
 
         if (lines.Count == 0)
